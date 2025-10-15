@@ -1,0 +1,2 @@
+/* optional: small tweaks on top of Tailwind */
+.prose a { text-decoration: underline; }

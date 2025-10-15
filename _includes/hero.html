@@ -1,0 +1,75 @@
+{% if site.data.author.photo %}
+{% assign header_class = "flex items-center gap-4 p-4 rounded-2xl bg-slate-50" %}
+{% else %}
+{% assign header_class = "p-4 rounded-2xl bg-slate-50" %}
+{% endif %}
+
+<section>
+    <div class="{{ header_class }}">
+        {% if site.data.author.photo %}
+        <img class="w-24 h-24 rounded-full object-cover ring-2 ring-slate-200"
+            src="{{ site.data.author.photo | relative_url }}" alt="{{ site.data.author.name }} headshot">
+        {% endif %}
+        <div>
+            <h1 class="text-2xl font-bold">{{ site.data.author.name }}</h1>
+            <div class="text-slate-600">
+                {{ site.data.author.role }} ·
+                {% if site.data.author.affiliation_url %}
+                <a class="underline hover:no-underline text-sky-700" href="{{ site.data.author.affiliation_url }}"
+                    target="_blank" rel="noopener">{{ site.data.author.affiliation }}</a>
+                {% else %}
+                {{ site.data.author.affiliation }}
+                {% endif %}
+                {% if site.data.author.location %} · {{ site.data.author.location }}{% endif %}
+            </div>
+            {% if site.data.author.bio %}
+            <p class="mt-2 text-slate-700">{{ site.data.author.bio }}</p>
+            {% endif %}
+
+            <div class="flex flex-wrap gap-2 mt-3">
+                {% if site.data.author.website %}
+                <a class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-slate-900 text-white text-sm hover:bg-black"
+                    href="{{ site.data.author.website }}" target="_blank" rel="noopener">
+                    <i class="bi bi-globe2" aria-hidden="true"></i><span>Website</span>
+                </a>
+                {% endif %}
+                {% if site.data.author.email %}
+                <a class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-sky-600 text-white text-sm hover:bg-sky-700"
+                    href="mailto:{{ site.data.author.email }}">
+                    <i class="bi bi-envelope-fill" aria-hidden="true"></i><span>Email</span>
+                </a>
+                {% endif %}
+                {% if site.data.author.scholar %}
+                <a class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-emerald-600 text-white text-sm hover:bg-emerald-700"
+                    href="{{ site.data.author.scholar }}" target="_blank" rel="noopener">
+                    <i class="ai ai-google-scholar ai-lg" aria-hidden="true"></i><span>Scholar</span>
+                </a>
+                {% endif %}
+                {% if site.data.author.orcid %}
+                <a class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-green-700 text-white text-sm hover:bg-green-800"
+                    href="{{ site.data.author.orcid }}" target="_blank" rel="noopener me">
+                    <i class="ai ai-orcid ai-lg" aria-hidden="true"></i><span>ORCID</span>
+                </a>
+                {% endif %}
+                {% if site.data.author.github %}
+                <a class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-slate-800 text-white text-sm hover:bg-black"
+                    href="{{ site.data.author.github }}" target="_blank" rel="noopener">
+                    <i class="bi bi-github" aria-hidden="true"></i><span>GitHub</span>
+                </a>
+                {% endif %}
+                {% if site.data.author.linkedin %}
+                <a class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-sky-700 text-white text-sm hover:bg-sky-800"
+                    href="{{ site.data.author.linkedin }}" target="_blank" rel="noopener">
+                    <i class="bi bi-linkedin" aria-hidden="true"></i><span>LinkedIn</span>
+                </a>
+                {% endif %}
+                {% if site.data.author.twitter %}
+                <a class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-slate-700 text-white text-sm hover:bg-slate-800"
+                    href="{{ site.data.author.twitter }}" target="_blank" rel="noopener">
+                    <i class="bi bi-twitter-x" aria-hidden="true"></i><span>Twitter</span>
+                </a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,89 @@
+{% assign education = site.data.experience.education | default: [] %}
+{% assign work = site.data.experience.work | default: [] %}
+
+{% if education.size > 0 or work.size > 0 %}
+<section id="experience" class="mt-10">
+    <h2 class="text-xl font-semibold mb-4">Experience</h2>
+
+    {% if education.size > 0 %}
+    <div class="bg-slate-50 rounded-2xl p-4 mb-6">
+        <h3 class="text-lg font-semibold mb-3 flex items-center gap-2">
+            <i class="bi bi-mortarboard-fill text-indigo-600"></i> Education
+        </h3>
+        <hr class="my-2">
+        <ul class="space-y-4">
+            {% for exp in education %}
+            <li class="flex items-start gap-3">
+                <i class="bi bi-book-fill text-indigo-600 mt-1"></i>
+                <div>
+                    <div class="font-medium text-slate-900">
+                        {{ exp.title }}
+                        {% if exp.institution_url %}
+                        <span class="text-slate-600">
+                            @ <a href="{{ exp.institution_url }}" class="underline hover:no-underline text-sky-700"
+                                target="_blank" rel="noopener">{{ exp.institution }}</a>
+                        </span>
+                        {% else %}
+                        <span class="text-slate-600">@ {{ exp.institution }}</span>
+                        {% endif %}
+                    </div>
+                    <div class="text-slate-600 text-sm">
+                        {% if exp.location %}{{ exp.location }} · {% endif %}
+                        {% if exp.period %}{{ exp.period }}{% endif %}
+                    </div>
+                    {% if exp.description %}
+                    <div class="mt-1 text-slate-700 text-sm">{{ exp.description }}</div>
+                    {% endif %}
+                    {% if exp.thesis %}
+                    <div class="mt-2">
+                        <a href="{{ exp.thesis }}" target="_blank" rel="noopener"
+                            class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-sky-600 text-white text-sm hover:bg-sky-700">
+                            <i class="bi bi-journal-text" aria-hidden="true"></i>
+                            <span>Thesis</span>
+                        </a>
+                    </div>
+                    {% endif %}
+                </div>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+
+    {% if work.size > 0 %}
+    <div class="bg-slate-50 rounded-2xl p-4">
+        <h3 class="text-lg font-semibold mb-3 flex items-center gap-2">
+            <i class="bi bi-briefcase-fill text-emerald-600"></i> Work
+        </h3>
+        <hr class="my-2">
+        <ul class="space-y-4">
+            {% for exp in work %}
+            <li class="flex items-start gap-3">
+                <i class="bi bi-gear-fill text-emerald-600 mt-1"></i>
+                <div>
+                    <div class="font-medium text-slate-900">
+                        {{ exp.title }}
+                        {% if exp.institution_url %}
+                        <span class="text-slate-600">
+                            @ <a href="{{ exp.institution_url }}" class="underline hover:no-underline text-sky-700"
+                                target="_blank" rel="noopener">{{ exp.institution }}</a>
+                        </span>
+                        {% else %}
+                        <span class="text-slate-600">@ {{ exp.institution }}</span>
+                        {% endif %}
+                    </div>
+                    <div class="text-slate-600 text-sm">
+                        {% if exp.location %}{{ exp.location }} · {% endif %}
+                        {% if exp.period %}{{ exp.period }}{% endif %}
+                    </div>
+                    {% if exp.description %}
+                    <div class="mt-1 text-slate-700 text-sm">{{ exp.description }}</div>
+                    {% endif %}
+                </div>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+</section>
+{% endif %}

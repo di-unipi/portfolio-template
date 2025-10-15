@@ -1,0 +1,28 @@
+name: "Your Name"
+role: "PhD Student"
+email: "your.email@phd.unipi.it"
+phone: "+39 050 221XXXX"
+address:
+  street: "Largo Bruno Pontecorvo 3"
+  city: Pisa
+  region: PI
+  postcode: "56127"
+  country: Italy
+  country_code: IT
+directions: Department of Computer Science, Floor 2
+room: Room YYY
+
+affiliation: "Department of Computer Science, University of Pisa"
+affiliation_url: "https://di.unipi.it/"
+
+bio: >
+  Short bio here (1-3 sentences). Research areas, advisor (optional), lab group, and interests.
+
+photo: "/assets/img/me.png" # e.g., /assets/img/me.jpg — leave empty to hide the propic automatically
+# Optional links (leave any blank to hide)
+website: ""
+scholar: "" # e.g., https://scholar.google.com/citations?user=XXXX
+orcid: "" # e.g., https://orcid.org/0000-0000-0000-0000
+github: ""
+twitter: ""
+linkedin: ""
