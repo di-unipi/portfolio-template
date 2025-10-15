@@ -3,6 +3,8 @@
 A clean, single-page Jekyll portfolio template — perfect for the **lazy student, busy researcher, or anyone** who wants a nice-looking academic or personal page without too much effort.  
 It uses **Tailwind CSS via CDN**, **Bootstrap Icons**, and **Academicons** to make links and buttons look neat straight out of the box.
 
+👉 See the live demo [**here**](https://di-unipi.github.io/portfolio-template/).
+
 ---
 
 ## ⚙️ Requirements
